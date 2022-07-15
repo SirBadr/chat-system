@@ -1,0 +1,1 @@
+$bunny = Bunny.new(:host => "amqp://guest:guest@localhost:5672")
