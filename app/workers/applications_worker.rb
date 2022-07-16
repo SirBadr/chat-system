@@ -1,4 +1,4 @@
-class MessagesWorker
+class ApplicationsWorkers
     include Sneakers::Worker
     # This worker will connect to "instaapi.bugs" queue
     # env is set to nil since by default the actuall queue name would be

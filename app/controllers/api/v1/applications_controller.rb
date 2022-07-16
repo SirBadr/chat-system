@@ -16,15 +16,15 @@ module Api
                     break randTok unless App.where(token: randTok).exists?
                 end
                 # create new app record
-                @app = App.new({token: randTok, name: params[:name], chats_count: 0})
+                app = App.new({token: randTok, name: params[:name], chats_count: 0})
                 
-                #if @app.save
-                    Publisher.publish(@app);
+                if app.save
+                    #Publisher.publish(app);
 
-                    render json: {status: "SUCCESS", message:"savedApp",data: @app.token}, status: :ok
-                #else
-                #    render json: {status: "FAILURE", message:"notSavedApp",data: {}}, status: :unprocessable_entity
-                #end
+                    render json: {status: "SUCCESS", message:"savedApp",data: app.token}, status: :ok
+                else
+                    render json: {status: "FAILURE", message:"notSavedApp",data: {}}, status: :unprocessable_entity
+                end
             end
 
             # patch request to update application name!
