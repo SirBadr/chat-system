@@ -1,1 +1,2 @@
-$bunny = Bunny.new(:host => "amqp://guest:guest@localhost:5672")
+$bunny = Bunny.new(:host => "amqp://guest:guest@my_rabbit:5672")
+Sneakers.configure(:amqp => "amqp://guest:guest@my_rabbit:5672")
