@@ -12,6 +12,7 @@
 /tmp/*
 !/log/.keep
 !/tmp/.keep
-
+/volumes
+/voluems
 # Ignore Byebug command history file.
 .byebug_history

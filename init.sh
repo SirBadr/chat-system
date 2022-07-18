@@ -1,0 +1,1 @@
+rails db:create && rails db:migrate --trace
