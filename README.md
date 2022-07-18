@@ -2,7 +2,7 @@ Instabug Backend Challenge
 
 P.S: I never used rails nor ruby, docker, elastic search before now, the project runs good if you're using running local 'elasticseach' and 'rabbitmq' CLI commands, but with docker i faced some issues connecting to mysql database!
 
-P.S: i used 2 accounts to push to the repository, "mahmoudbadr9199@gmail.com", and "tso1999@yahoo.com".
+P.S: i used 2 accounts to push to the repository, "mahmoudbadr9199@gmail.com", and "tso1999@yahoo.com", which are both my emails connected with "mahmoudsamirmohammed999@yahoo.com" which i applied with.
 
 
 
