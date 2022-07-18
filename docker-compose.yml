@@ -8,7 +8,7 @@ services:
     ports:
       - "33061:3306"
     volumes:
-      - ./voluems/mysql_data:/var/lib/mysql
+      - ./volumes/mysql_data:/var/lib/mysql
     environment:
       - MYSQL_ALLOW_EMPTY_PASSWORD=1
 
