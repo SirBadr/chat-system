@@ -3,6 +3,7 @@ Instabug Backend Challenge
 P.S: I never used rails nor ruby, docker, elastic search before now, the project runs good if you're using running local 'elasticseach' and 'rabbitmq' CLI commands, but with docker i faced some issues connecting to mysql database!
 
 P.S: i used 2 accounts to push to the repository, "mahmoudbadr9199@gmail.com", and "tso1999@yahoo.com".
+P.S: i'm using the latest version of docker and docker compose, the command runs `docker compose up --build --force-recreate`, `build` flag is used to run dockerfile when building images, `force-recreate` flag is used to recreate the image if you have it already existing on your device.
 
 Challenge Statement
 ===================
