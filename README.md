@@ -133,54 +133,68 @@ I exposed rails api on port 3000 and elasticsearch on port 9200
 1) Create New application
 
 POST request.
+
 URL: http://localhost:3000/api/v1/applications
+
 BODY PARAMS: `name`
 
 
 2) update application name
 
 PUT request.
+
 URL: http://localhost:3001/applications/<app_token>
+
 BODY PARAMS: `app_token`, `name`
 
 
 3) get application
 
 GET request.
+
 URL: http://localhost:3000/api/v1/applications/<app_token>
+
 BODY PARAMS: `app_token`
 
 
 4) create a new chat
 
 POST request.
+
 URL: http://localhost:3000/api/v1/chats
+
 BODY PARAMS: `app_token` #that you want to assign the chat to
 
 
 5) get all application chats
 
 GET request.
+
 URL: http://localhost:3000/api/v1/chats/<app_token>
+
 BODY PARAMS: `app_token`
 
 
 6) create a new message
 
 POST request.
+
 URL: http://localhost:3000/api/v1/messages
+
 BODY PARAMS: `app_token`, `chat_id`, `body`
 
 
 7) get all message in a chat
 
 GET request.
+
 URL: http://localhost:3000/api/v1/messages
+
 BODY PARAMS: `app_token`, `chat_id`.
 
 
 8) search a message (partially or fully)
-`
+
 curl -X POST \
     http://localhost:9200/messages/_search \
     -H 'cache-control: no-cache' \
@@ -193,7 +207,6 @@ curl -X POST \
       }
   }'
 
-`
 
 
 
