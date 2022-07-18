@@ -19,7 +19,7 @@ module Api
                 app = App.new({token: randTok, name: params[:name], chats_count: 0})
                 
                 if app.save
-                    #Publisher.publish(app);
+                    Publisher.publish(app);
 
                     render json: {status: "SUCCESS", message:"savedApp",data: app.token}, status: :ok
                 else

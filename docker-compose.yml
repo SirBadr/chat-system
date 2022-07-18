@@ -5,9 +5,12 @@ services:
   mysql:
     image: mysql:latest ################
     restart: always
+    ports:
+      - "33061:3306"
     volumes:
-      # We'll mount the 'mysql-data' volume into the location mysql stores it's data:
-      - ./volumes/mysql-data:/var/lib/mysql/data
+      - ./voluems/mysql_data:/var/lib/mysql
+    environment:
+      - MYSQL_ALLOW_EMPTY_PASSWORD=1
 
   rabbitmq:
     image: rabbitmq:3.6.9-alpine
@@ -27,8 +30,6 @@ services:
     build: .
     command: sh -c "sh wait-curl.sh es:9200 && sh ./init.sh && rails s -p 3000 -b '0.0.0.0'"
     restart: always
-    volumes:
-      - .:/app
     ports:
       - "4000:3000"
     links:
@@ -42,7 +43,7 @@ services:
 
   worker:
     build: .
-    command: sh -c "sh wait-curl.sh es:9200 && rake sneakers:run"
+    command: sh -c "sh wait-curl.sh es:9200 && rails sneakers:run"
     restart: always
     volumes:
       - .:/app

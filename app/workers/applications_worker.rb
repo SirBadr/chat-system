@@ -1,8 +1,8 @@
 class ApplicationsWorkers
     include Sneakers::Worker
-    # This worker will connect to "instaapi.bugs" queue
+    # This worker will connect to "applications" queue
     # env is set to nil since by default the actuall queue name would be
-    # "messages"
+    # "applications"
     from_queue "applications", env: nil
   
     # work method receives message payload in raw format

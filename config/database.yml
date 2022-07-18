@@ -13,27 +13,26 @@ default: &default
   adapter: mysql2
   encoding: utf8
   pool: 5
-  username: guest
-  password: guest
-  socket: /var/run/mysqld/mysqld.sock
+  username: mysql
+  password:
+  socket: /var/run/mysqld/mysql.sock
+  volumes: ./volumes/mysql-data:/var/lib/mysql/data
 
 development:
   <<: *default
   database: s1t1_development
-  username: guest
-  password: guest
-  host: localhost
-  post: 5432
+  username: mysql
+  password:
+  host: 127.0.0.1
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
   <<: *default
   database: s1t1_test
-  username: guest
-  password: guest
-  host: localhost
-  post: 5432
+  username: mysql
+  password:
+  host: 127.0.0.1
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
 # ever seen by anyone, they now have access to your database.
@@ -53,10 +52,9 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
-production:
-  <<: *default
-  database: s1t1_production
-  username: <%= ENV['MYSQL_HOST'] %>
-  password: #<%= ENV['S1T1_DATABASE_PASSWORD'] %>
-  host: sql
-  post: 5432
+#production:
+#  <<: *default
+#  database: s1t1_production
+#  username: <%= ENV['MYSQL_HOST'] %>
+#  password:
+#  host: 127.0.0.1

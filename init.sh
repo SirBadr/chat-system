@@ -1,2 +1,1 @@
-rake db:create && rake db:migrate
-rake es:build_index
+rails db:create && rails db:migrate --trace

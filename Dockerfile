@@ -1,13 +1,7 @@
-FROM ruby:2.3.0
-
-# RUN apk update && apk --update add postgresql-client
-#
-# RUN apk --update add --virtual build_deps \
-#     build-base ruby-dev libc-dev linux-headers \
-#     openssl-dev postgresql-dev libxml2-dev libxslt-dev
+FROM ruby:2.4-slim
 
 RUN apt-get update
-RUN apt-get install -y --no-install-recommends postgresql-client \
+RUN apt-get install -y --no-install-recommends nodejs libmariadb-dev\
   build-essential patch ruby-dev zlib1g-dev liblzma-dev libpq-dev \
   curl
 RUN rm -rf /var/lib/apt/lists/*
@@ -15,12 +9,9 @@ RUN rm -rf /var/lib/apt/lists/*
 WORKDIR /app
 COPY Gemfile* ./
 RUN bundle install
+
 COPY . .
 
-# RUN apk del build_deps
-
-ENV RAILS_ENV production
+ENV RAILS_ENV development
 
 EXPOSE 3000
-# ENTRYPOINT ["sh", "./init.sh"]
-# CMD ["rails", "server", "-b", "0.0.0.0"]
