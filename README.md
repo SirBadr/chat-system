@@ -202,7 +202,7 @@ curl -X POST \
     -d '{                  
       "query": {
           "match": {
-              "body": <add-your-text-for-search>
+              "body": 'text'
           }
       }
   }'
